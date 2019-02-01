@@ -18,7 +18,8 @@ const buttonSub = document.getElementById('btnSub');
 const buttonMul = document.getElementById('btnMul');
 const buttonDiv = document.getElementById('btnDiv');
 const decimal = document.getElementById('decimal');
-const maxDisplayLength = 10;
+const btnPercent = document.getElementById('btnPer');
+const maxDisplayLength = 14;
 var lastValue = 0;
 var input = 0;
 var operation = 0;
@@ -28,7 +29,7 @@ function addDisplay(value) {
         lastValue = 0;
     }
     if (input.length >= maxDisplayLength) {
-        numInput.innerHTML = "Error"
+        numInput.innerHTML = "Can't do that";
     } else {
         numInput.innerHTML = value;
         input = numOutput += value;
@@ -97,26 +98,31 @@ function equate() {
             divide(lastValue, input);
             break;
     }
-    numInput.innerHTML = parseFloat(lastValue.toFixed(2));
-    lastValue = parseFloat(lastValue.toFixed(2));
+    numInput.innerHTML = parseFloat(lastValue.toFixed(3));
+    lastValue = parseFloat(lastValue.toFixed(3));
     check()
     error()
     operation = 0;
     input = 0;
     numOutput = '';
 }
+
 function check() {
     lastValue = '' + lastValue;
     if (lastValue.length >= maxDisplayLength) {
-        numInput.innerHTML = 'Error';
+        numInput.innerHTML = "Can't do that";
     }
 }
 
 function error() {
     lastValue = '' + parseFloat(lastValue);
-    if (lastValue.indexOf('NaN') != -1) {
-        numInput.innerHTML = 'Math Error'
+    if (lastValue.indexOf(NaN || Infinity) != -1) {
+        numInput.innerHTML = 'Math error'
     }
+}
+
+function percentage() {
+    numInput.innerHTML = "Doesn't work";
 }
 
 function keyPress() {
@@ -132,6 +138,7 @@ function keyPress() {
     button9.addEventListener('click', function () { addDisplay('9') })
     btnAllClear.addEventListener('click', function () { clearAll() })
     btnRecentClear.addEventListener('click', function () { clearRecent() })
+    btnPercent.addEventListener('click', function () { percentage() })
     buttonEqual.addEventListener('click', function () { equate() })
     decimal.addEventListener('click', function () { addDecimal() })
 
@@ -150,7 +157,6 @@ function keyPress() {
         operation = 1;
         input = 0;
         numOutput = '';
-        // reset()
 
     })
     buttonSub.addEventListener('click', function () {
@@ -168,7 +174,7 @@ function keyPress() {
         operation = 2;
         input = 0;
         numOutput = '';
-        // reset()
+
     })
     buttonMul.addEventListener('click', function () {
         numInput.innerHTML = ' * ';
@@ -185,8 +191,8 @@ function keyPress() {
         operation = 3;
         input = 0;
         numOutput = '';
-        // reset()
     })
+
     buttonDiv.addEventListener('click', function () {
         numInput.innerHTML = ' / ';
         if (operation != 0) {
@@ -203,7 +209,6 @@ function keyPress() {
         input = 0;
         numOutput = '';
         // oprArray.splice(oprArray.length, 0, '4');
-        // reset()
     })
 }
 keyPress();

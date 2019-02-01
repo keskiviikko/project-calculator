@@ -22,16 +22,20 @@ html {
     transform: translate(-50%, -50%);
     width: 400px;
 }
+
+p {
+    font-family: 'VT323', monospace;
+}
   
 .display {
     width: 100%;
     font-size: 6rem;
-    font-family: 'VT323', monospace;
     height: 80px;
     border: none;
     background-color: #bfccbb;
     color: rgb(0, 0, 0);
     text-align: right;
+    padding-top: 10px;
     padding-right: 20px;
     padding-left: 10px;
 }
