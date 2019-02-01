@@ -1,0 +1,123 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: 'Quattrocento Sans', sans-serif;
+	color: black;
+}
+
+.calculator {
+    border: 10px solid black;
+    border-top: 50px solid black;
+    border-radius: 5px;
+    background-color: black;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+  
+.calculator-screen {
+    width: 100%;
+    font-size: 6rem;
+    font-family: 'VT323', monospace;
+    height: 80px;
+    border: none;
+    background-color: #bfccbb;
+    color: rgb(0, 0, 0);
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+button {
+    height: 60px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: grey;
+    font-size: 4rem;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+}
+  
+button:hover {
+    background-color: #eaeaea;
+}
+  
+.operator:hover {
+    background-color: #f1ef73;
+}
+  
+.all-clear {
+    background-color: #646883;
+    border-color: #c4c4c4;
+    color: #fff;
+    grid-row-start: 1;
+}
+  
+.all-clear:hover {
+    background-color: #f17377;
+}
+
+.recent-clear:hover {
+    background-color: #f17377;
+}
+  
+.add {
+    background-color: #646883;
+    border-color: #c4c4c4;
+    color: #fff;
+    height: 100%;
+    grid-row: 4 / 6;
+    grid-column: 4 / 5;
+}
+
+.add:hover {
+    background-color: #f1ef73;
+}
+  
+.equals:hover {
+    background-color: #4e9ed4;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    padding: 20px;
+}
+
+body {
+	background-color: rgb(235, 212, 183);
+}
+
+header {
+	margin: 40px 0 25px 0;
+	text-align: center;
+}
+
+footer {
+	margin: 50px 0 10px 0;
+}
+
+h1 {
+	text-align: center;
+	font-size: 40px;
+}
+
+a {
+	font-size: 11px;
+	text-decoration: none;
+}
+
+a:hover {
+	font-size: 14px;
+}
