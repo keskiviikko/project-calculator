@@ -11,7 +11,7 @@ html {
 	color: black;
 }
 
-.calculator {
+#calculator {
     border: 10px solid black;
     border-top: 50px solid black;
     border-radius: 5px;
@@ -23,7 +23,7 @@ html {
     width: 400px;
 }
   
-.calculator-screen {
+.display {
     width: 100%;
     font-size: 6rem;
     font-family: 'VT323', monospace;
@@ -34,6 +34,14 @@ html {
     text-align: right;
     padding-right: 20px;
     padding-left: 10px;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    padding: 20px;
 }
 
 button {
@@ -55,22 +63,22 @@ button:hover {
     background-color: #f1ef73;
 }
   
-.all-clear {
+#all-clear {
     background-color: #646883;
     border-color: #c4c4c4;
     color: #fff;
     grid-row-start: 1;
 }
   
-.all-clear:hover {
+#all-clear:hover {
     background-color: #f17377;
 }
 
-.recent-clear:hover {
+#recent-clear:hover {
     background-color: #f17377;
 }
   
-.add {
+#btnAdd {
     background-color: #646883;
     border-color: #c4c4c4;
     color: #fff;
@@ -79,24 +87,21 @@ button:hover {
     grid-column: 4 / 5;
 }
 
-.add:hover {
+#btnAdd:hover {
     background-color: #f1ef73;
 }
   
-.equals:hover {
+#equals:hover {
     background-color: #4e9ed4;
 }
 
-.calculator-keys {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
-    padding: 20px;
+.percent:hover {
+    color: black;
+    background-color: black;
 }
 
 body {
-	background-color: rgb(235, 212, 183);
+	background-color: rgb(230, 220, 200);
 }
 
 header {
